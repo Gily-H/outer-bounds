@@ -91,4 +91,9 @@ public class PlayerShip : MonoBehaviour
     {
         return gameObject.GetComponent<HealthTracker>().GetHealth();
     }
+
+    public bool GetIsFacingRight()
+    {
+        return this.isFacingRight;
+    }
 }

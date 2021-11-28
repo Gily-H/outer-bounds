@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
+    [SerializeField] PlayerShip playerShip;
+    [SerializeField] bool laserDirection;
     [SerializeField] float speed = 10.0f;
     [SerializeField] float movement;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerShip = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShip>();
+        laserDirection = playerShip.GetIsFacingRight();
         // destroy laser after 2 seconds if no collision triggered
         Destroy(gameObject, 4.0f);
     }
@@ -33,6 +37,12 @@ public class Laser : MonoBehaviour
     private void LaserMovement()
     {
         movement = speed * Time.deltaTime;
+        
+        if (!laserDirection)
+        {
+            // shoot left when ship facing left
+            movement *= -1;
+        }
 
         // laser moves horizontally
         this.transform.Translate(movement, 0, 0);
