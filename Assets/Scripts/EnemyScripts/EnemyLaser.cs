@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Laser : MonoBehaviour
+public class EnemyLaser : MonoBehaviour
 {
-    [SerializeField] PlayerShip playerShip;
-    [SerializeField] bool laserDirection;
     [SerializeField] float speed = 10.0f;
     [SerializeField] float movement;
     private AudioSource hitSound;
@@ -14,8 +12,6 @@ public class Laser : MonoBehaviour
     void Start()
     {
         hitSound = GetComponent<AudioSource>();
-        playerShip = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShip>();
-        laserDirection = playerShip.GetIsFacingRight();
         // destroy laser after 4 seconds if no collision triggered
         Destroy(gameObject, 4.0f);
     }
@@ -28,7 +24,7 @@ public class Laser : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<HealthTracker>().ApplyDamage();
             AudioSource.PlayClipAtPoint(hitSound.clip, transform.position);
@@ -39,13 +35,7 @@ public class Laser : MonoBehaviour
 
     private void LaserMovement()
     {
-        movement = speed * Time.deltaTime;
-        
-        if (!laserDirection)
-        {
-            // shoot left when ship facing left
-            movement *= -1;
-        }
+        movement = -1 * speed * Time.deltaTime;
 
         // laser moves horizontally
         this.transform.Translate(movement, 0, 0);

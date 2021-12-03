@@ -8,6 +8,7 @@ public class PauseResume : MonoBehaviour
 {
     GameObject[] pauseMode;
     GameObject[] resumeMode;
+    [SerializeField] GameObject mainMenuOverlay;
     [SerializeField] Text pauseText;
 
     // Start is called before the first frame update
@@ -15,7 +16,9 @@ public class PauseResume : MonoBehaviour
     {
         pauseMode = GameObject.FindGameObjectsWithTag("ShowWhenPaused");
         resumeMode = GameObject.FindGameObjectsWithTag("ShowWhenResumed");
+        pauseText = GameObject.Find("PauseText").GetComponent<Text>();
 
+        mainMenuOverlay.SetActive(false);
         foreach (GameObject g in pauseMode)
         {
             g.SetActive(false);
@@ -61,12 +64,21 @@ public class PauseResume : MonoBehaviour
             g.SetActive(true);
         }
 
+        mainMenuOverlay.SetActive(false);
         pauseText.text = "Press \"p\" to pause";
-
     }
 
-    public void mainMenu()
+    public void MainMenu()
     {
-        SceneManager.LoadScene("Menu");
+        foreach (GameObject g in pauseMode)
+        {
+            g.SetActive(false);
+        }
+        mainMenuOverlay.SetActive(true);
+    }
+
+    public void ResumeFromMainMenu()
+    {
+        Resume();
     }
 }

@@ -6,20 +6,22 @@ using UnityEngine.UI;
 
 public class MainMenuButtons : MonoBehaviour
 {
+    GameObject mainMenuOverlay;
+    [SerializeField] GameObject settingsPanel;
+    [SerializeField] GameObject instructionsPanel;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        // if game paused, change play button text
-        if (Time.timeScale < 1.0f)
-        {
-            SetPlayTextToResume();
-        }
+        mainMenuOverlay = GameObject.FindGameObjectWithTag("Overlay");
+        settingsPanel.SetActive(false);
+        instructionsPanel.SetActive(false);
     }
 
     public void GoToSettings()
     {
-        SceneManager.LoadScene("Settings");
+        Debug.Log("settings");
+        mainMenuOverlay.SetActive(false);
+        settingsPanel.SetActive(true);
     }
 
     public void PlayGame()
@@ -29,17 +31,17 @@ public class MainMenuButtons : MonoBehaviour
 
     public void GoToInstructions()
     {
-        SceneManager.LoadScene("Instructions");
+        Debug.Log("instructions");
+        mainMenuOverlay.SetActive(false);
+        instructionsPanel.SetActive(true);
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("Menu");
+        settingsPanel.SetActive(false);
+        instructionsPanel.SetActive(false);
+        mainMenuOverlay.SetActive(true);
     }
 
-    // when game paused and return to main menu, play button should display "resume game" instead of "play game"
-    private void SetPlayTextToResume()
-    {
-        GameObject.Find("PlayButton").GetComponentInChildren<Text>().text = "Resume Game";
-    }
+
 }

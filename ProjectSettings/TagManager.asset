@@ -10,6 +10,11 @@ TagManager:
   - ShowWhenPaused
   - ShowWhenResumed
   - Wall
+  - EnemyLaserSpawner
+  - Overlay
+  - Settings
+  - Instructions
+  - Directions
   layers:
   - Default
   - TransparentFX
@@ -44,6 +49,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: SuperBackground
+    uniqueID: 3582271573
+    locked: 0
   - name: Background
     uniqueID: 1085573219
     locked: 0
@@ -55,4 +63,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 436691241
+    locked: 0
+  - name: SuperMenuForeground
+    uniqueID: 1977911769
     locked: 0

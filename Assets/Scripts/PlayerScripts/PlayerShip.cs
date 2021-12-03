@@ -23,7 +23,7 @@ public class PlayerShip : MonoBehaviour
         {
             playerBody = GetComponent<Rigidbody2D>();
         }
-
+        playerHealthText = GameObject.Find("PlayerHealth").GetComponent<Text>();
         laserSpawner = GameObject.FindGameObjectWithTag("LaserSpawner");
     }
 

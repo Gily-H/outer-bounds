@@ -41,5 +41,4 @@ public class LevelLoader : MonoBehaviour
     {
         SceneManager.LoadScene(level);
     }
-
 }
