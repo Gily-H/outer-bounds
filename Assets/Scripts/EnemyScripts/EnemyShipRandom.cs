@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyShip : MonoBehaviour
+public class EnemyShipRandom : MonoBehaviour
 {
     [SerializeField] GameObject enemyLaserSpawner;
     [SerializeField] Transform enemyFirePoint;
@@ -11,7 +11,6 @@ public class EnemyShip : MonoBehaviour
     private float timeTillNextFire;
 
     [SerializeField] Text enemyHealthText;
-
     [SerializeField] Transform targetPlayer;
     [SerializeField] Vector3 direction;
     [SerializeField] float rotationAngle;
@@ -20,12 +19,13 @@ public class EnemyShip : MonoBehaviour
     [SerializeField] Vector2 movement;
     [SerializeField] float timer;
     [SerializeField] float directionTimer = 1.0f;
-    [SerializeField] float speed = 0.5f;
+    [SerializeField] float speed = 10f;
 
     // Start is called before the first frame update
     void Start()
     {
         targetPlayer = GameObject.FindGameObjectWithTag("Player").transform;
+
         if (enemyBody == null)
         {
             enemyBody = GetComponent<Rigidbody2D>();
@@ -35,6 +35,7 @@ public class EnemyShip : MonoBehaviour
 
         fireRate = 1f;
         timeTillNextFire = Time.time;
+        timer = 0.5f;
     }
 
     private void Update()
@@ -42,8 +43,6 @@ public class EnemyShip : MonoBehaviour
         direction = targetPlayer.position - transform.position;
         rotationAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         enemyBody.rotation = rotationAngle;
-        movement = direction.normalized;
-
         if (Time.time > timeTillNextFire)
         {
             FireEnemyLaser();
@@ -53,13 +52,24 @@ public class EnemyShip : MonoBehaviour
     private void FixedUpdate()
     {
         DisplayEnemyHealth();
-        Chasing();
+        SetRandomDirection();
+        RandomMove();
     }
 
     // Enemy ship horizontal and vertical movement
-    private void Chasing()
+    private void RandomMove()
     {
-        enemyBody.MovePosition(transform.position + (direction * speed) * Time.deltaTime);
+        enemyBody.AddForce(movement * speed);
+    }
+
+    private void SetRandomDirection()
+    {
+        timer -= Time.deltaTime;
+        if (timer < 0.0f)
+        {
+            movement = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
+            timer += directionTimer;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

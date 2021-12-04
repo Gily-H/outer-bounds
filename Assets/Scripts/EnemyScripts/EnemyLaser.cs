@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class EnemyLaser : MonoBehaviour
 {
+    [SerializeField] Rigidbody2D bullet;
     [SerializeField] float speed = 10.0f;
     [SerializeField] float movement;
+    [SerializeField] Transform targetPlayer;
     private AudioSource hitSound;
 
     // Start is called before the first frame update
     void Start()
     {
+        bullet = GetComponent<Rigidbody2D>();
+        targetPlayer = GameObject.FindGameObjectWithTag("Player").transform;
         hitSound = GetComponent<AudioSource>();
+
+        LaserMovement();
         // destroy laser after 4 seconds if no collision triggered
         Destroy(gameObject, 4.0f);
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        LaserMovement();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,9 +35,11 @@ public class EnemyLaser : MonoBehaviour
 
     private void LaserMovement()
     {
-        movement = -1 * speed * Time.deltaTime;
+        Vector2 force = (targetPlayer.position - transform.position).normalized * speed;
+        bullet.velocity = new Vector2(force.x, force.y);
 
-        // laser moves horizontally
-        this.transform.Translate(movement, 0, 0);
+        float rotationAngle = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
+        bullet.rotation = rotationAngle;
+
     }
 }
