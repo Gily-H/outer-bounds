@@ -5,11 +5,12 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] int health;
-    [SerializeField] int LASER_DAMAGE = 10;
+    [SerializeField] int laserDamage;
     [SerializeField] AudioSource deathSound;
 
     void Start()
     {
+        SetLaserDamage();
         health = PersistData.Instance.GetPlayerHealth();
         deathSound = GetComponent<AudioSource>();
     }
@@ -30,11 +31,25 @@ public class PlayerHealth : MonoBehaviour
 
     public void ApplyDamage()
     {
-        ApplyDamage(LASER_DAMAGE);
+        ApplyDamage(laserDamage);
     }
 
     public int GetHealth()
     {
         return PersistData.Instance.GetPlayerHealth();
+    }
+
+    private void SetLaserDamage()
+    {
+        int difficulty = PlayerPrefs.GetInt("Difficulty");
+
+        if (difficulty == 0 || difficulty == 1)
+        {
+            this.laserDamage = 10;
+        }
+        else if (difficulty == 2)
+        {
+            this.laserDamage = 20;
+        }
     }
 }

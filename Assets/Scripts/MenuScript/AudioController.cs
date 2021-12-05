@@ -14,12 +14,6 @@ public class AudioController : MonoBehaviour
         SetGameVolume();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void UpdateVolumeText(float volume)
     {
         volume = volume * 100;

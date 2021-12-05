@@ -33,7 +33,7 @@ public class EnemyShip : MonoBehaviour
         enemyLaserSpawner = GameObject.FindGameObjectWithTag("EnemyLaserSpawner");
         enemyHealthText = GameObject.Find("EnemyHealth").GetComponent<Text>();
 
-        fireRate = 1f;
+        SetFireRate();
         timeTillNextFire = Time.time;
     }
 
@@ -85,5 +85,19 @@ public class EnemyShip : MonoBehaviour
     public int GetHealth()
     {
         return gameObject.GetComponent<HealthTracker>().GetHealth();
+    }
+
+    private void SetFireRate()
+    {
+        int difficulty = PlayerPrefs.GetInt("Difficulty");
+
+        if (difficulty == 0)
+        {
+            this.fireRate = 1f;
+        }
+        else if (difficulty == 1 || difficulty == 2)
+        {
+            this.fireRate = 0.5f;
+        }
     }
 }

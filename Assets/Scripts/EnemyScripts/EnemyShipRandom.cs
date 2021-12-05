@@ -33,7 +33,7 @@ public class EnemyShipRandom : MonoBehaviour
         enemyLaserSpawner = GameObject.FindGameObjectWithTag("EnemyLaserSpawner");
         enemyHealthText = GameObject.Find("EnemyHealth").GetComponent<Text>();
 
-        fireRate = 1f;
+        SetFireRate();
         timeTillNextFire = Time.time;
         timer = 0.5f;
     }
@@ -43,6 +43,7 @@ public class EnemyShipRandom : MonoBehaviour
         direction = targetPlayer.position - transform.position;
         rotationAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         enemyBody.rotation = rotationAngle;
+
         if (Time.time > timeTillNextFire)
         {
             FireEnemyLaser();
@@ -95,5 +96,19 @@ public class EnemyShipRandom : MonoBehaviour
     public int GetHealth()
     {
         return gameObject.GetComponent<HealthTracker>().GetHealth();
+    }
+
+    private void SetFireRate()
+    {
+        int difficulty = PlayerPrefs.GetInt("Difficulty");
+
+        if (difficulty == 0)
+        {
+            this.fireRate = 1f;
+        }
+        else if (difficulty == 1 || difficulty == 2)
+        {
+            this.fireRate = 0.5f;
+        }
     }
 }

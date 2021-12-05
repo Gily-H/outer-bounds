@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class HealthTracker : MonoBehaviour
 {
-    [SerializeField] int health = 100;
+    [SerializeField] int health;
     [SerializeField] int LASER_DAMAGE = 10;
 
     [SerializeField] AudioSource deathSound;
 
     void Start()
     {
+        SetHealth();
         deathSound = GetComponent<AudioSource>();
     }
 
@@ -35,5 +36,22 @@ public class HealthTracker : MonoBehaviour
     public int GetHealth()
     {
         return health;
+    }
+
+    private void SetHealth()
+    {
+        int difficulty = PlayerPrefs.GetInt("Difficulty");
+        if (difficulty == 0)
+        {
+            health = 100;
+        }
+        else if (difficulty == 1)
+        {
+            this.health = 200;
+        }
+        else if ( difficulty == 2)
+        {
+            this.health = 300;
+        }
     }
 }

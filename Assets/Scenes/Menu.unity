@@ -324,6 +324,28 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 84019028431952165, guid: 6213199855de48a419a027d5c57e986e, type: 3}
+      propertyPath: m_Text
+      value: 'Easy: Enemy has 100 health, Slow fire rate, Low enemy damage
+
+
+
+        Medium:
+        Enemy has 200 health, Fast fire rate, Low enemy damage
+
+
+
+        Hard: Enemy
+        has 300 health, Fast fire rate, Enemy does double damage'
+      objectReference: {fileID: 0}
+    - target: {fileID: 84019028431952165, guid: 6213199855de48a419a027d5c57e986e, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 84019028431952165, guid: 6213199855de48a419a027d5c57e986e, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 91307841742517628, guid: 6213199855de48a419a027d5c57e986e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

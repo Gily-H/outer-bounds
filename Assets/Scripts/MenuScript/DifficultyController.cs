@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class DifficultyController : MonoBehaviour
 {
+    private const int EASY = 0;
+    private const int MEDIUM = 1;
+    private const int HARD = 2;
+
     Button easyButton;
     Button mediumButton;
     Button hardButton;
@@ -19,19 +23,19 @@ public class DifficultyController : MonoBehaviour
 
     public void setDifficultyEasy()
     {
-        SetDifficulty(0);
+        SetDifficulty(EASY);
         HighlightSelected();
     }
 
     public void setDifficultyMedium()
     {
-        SetDifficulty(1);
+        SetDifficulty(MEDIUM);
         HighlightSelected();
     }
 
     public void setDifficultyHard()
     {
-        SetDifficulty(2);
+        SetDifficulty(HARD);
         HighlightSelected();
     }
 
