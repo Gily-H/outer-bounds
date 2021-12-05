@@ -26,7 +26,7 @@ public class EnemyLaser : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<HealthTracker>().ApplyDamage();
+            collision.gameObject.GetComponent<PlayerHealth>().ApplyDamage();
             AudioSource.PlayClipAtPoint(hitSound.clip, transform.position);
             Debug.Log("Hit");
             Destroy(gameObject);

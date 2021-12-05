@@ -15,6 +15,9 @@ TagManager:
   - Settings
   - Instructions
   - Directions
+  - Highscores
+  - HSnames
+  - HScores
   layers:
   - Default
   - TransparentFX

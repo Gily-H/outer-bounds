@@ -2,22 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthTracker : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] int health = 100;
+    [SerializeField] int health;
     [SerializeField] int LASER_DAMAGE = 10;
-
     [SerializeField] AudioSource deathSound;
 
     void Start()
     {
+        health = PersistData.Instance.GetPlayerHealth();
         deathSound = GetComponent<AudioSource>();
     }
 
     private void ApplyDamage(int damage)
     {
         health -= damage;
-        PersistData.Instance.SetScore(PersistData.Instance.GetScore() + 10);
+        PersistData.Instance.SetPlayerHealth(health);
+        PersistData.Instance.SetScore(PersistData.Instance.GetScore() - 2);
 
         // if ship has no hp, destroy ship
         if (health <= 0)
@@ -34,6 +35,6 @@ public class HealthTracker : MonoBehaviour
 
     public int GetHealth()
     {
-        return health;
+        return PersistData.Instance.GetPlayerHealth();
     }
 }

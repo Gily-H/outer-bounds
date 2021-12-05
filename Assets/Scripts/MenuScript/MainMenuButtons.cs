@@ -9,12 +9,14 @@ public class MainMenuButtons : MonoBehaviour
     GameObject mainMenuOverlay;
     [SerializeField] GameObject settingsPanel;
     [SerializeField] GameObject instructionsPanel;
+    [SerializeField] GameObject highscorePanel;
 
     private void Start()
     {
         mainMenuOverlay = GameObject.FindGameObjectWithTag("Overlay");
         settingsPanel.SetActive(false);
         instructionsPanel.SetActive(false);
+        highscorePanel.SetActive(false);
     }
 
     public void GoToSettings()
@@ -40,8 +42,14 @@ public class MainMenuButtons : MonoBehaviour
     {
         settingsPanel.SetActive(false);
         instructionsPanel.SetActive(false);
+        highscorePanel.SetActive(false);
         mainMenuOverlay.SetActive(true);
     }
 
-
+    public void GoToHighScores()
+    {
+        Debug.Log("HighScores");
+        mainMenuOverlay.SetActive(false);
+        highscorePanel.SetActive(true);
+    }
 }

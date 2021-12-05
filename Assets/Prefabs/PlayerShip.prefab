@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1774555673292478756}
   - component: {fileID: 1774555673292478757}
   - component: {fileID: 1774555673292478751}
-  - component: {fileID: 1774555673292478755}
+  - component: {fileID: -6573040094132533259}
+  - component: {fileID: 4598080033880593093}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Player
@@ -251,7 +252,7 @@ MonoBehaviour:
   vMovement: 0
   speed: 10
   isFacingRight: 1
---- !u!114 &1774555673292478755
+--- !u!114 &-6573040094132533259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,12 +261,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1774555673292478750}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3ad7117d21dbf44face717c9625fb5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f31cde182c7c41448a3395c8e53b7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
   LASER_DAMAGE: 10
   deathSound: {fileID: 0}
+--- !u!114 &4598080033880593093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774555673292478750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f36aa5732f077449ea966e24b24ce5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
 --- !u!1 &5795819751196400834
 GameObject:
   m_ObjectHideFlags: 0

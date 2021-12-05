@@ -39,7 +39,6 @@ public class PlayerShip : MonoBehaviour
         {
             FireLaser();
         }
-
     }
 
     private void FixedUpdate()
@@ -84,12 +83,12 @@ public class PlayerShip : MonoBehaviour
 
     private void DisplayPlayerHealth()
     {
-        playerHealthText.text = "Player: " + gameObject.GetComponent<HealthTracker>().GetHealth() + "%";
+        playerHealthText.text = "Player: " + gameObject.GetComponent<PlayerHealth>().GetHealth() + "%";
     }
 
     public int GetHealth()
     {
-        return gameObject.GetComponent<HealthTracker>().GetHealth();
+        return gameObject.GetComponent<PlayerHealth>().GetHealth();
     }
 
     public bool GetIsFacingRight()
