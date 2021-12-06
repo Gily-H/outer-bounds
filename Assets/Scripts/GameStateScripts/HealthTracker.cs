@@ -49,7 +49,7 @@ public class HealthTracker : MonoBehaviour
         {
             this.health = 200;
         }
-        else if ( difficulty == 2)
+        else if (difficulty == 2)
         {
             this.health = 300;
         }

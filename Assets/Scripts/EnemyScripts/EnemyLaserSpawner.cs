@@ -18,7 +18,7 @@ public class EnemyLaserSpawner : MonoBehaviour
     public void Spawn(Vector3 enemyFirePosition)
     {
         Debug.Log("Spawning Laser");
-        // instantiate a laser with the spawn location
+        // instantiate a laser in front of ship
         Instantiate(enemyLaserPrefab, enemyFirePosition, Quaternion.identity);
 
         // player laser firing sound effect

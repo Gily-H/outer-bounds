@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     [SerializeField] int level;
-    private const int playerStartingHealth = 100;
+    private const int PLAYER_STARTING_HEALTH = 100;
     [SerializeField] GameObject playerShip;
     [SerializeField] GameObject enemyShip;
 
@@ -20,11 +20,12 @@ public class LevelLoader : MonoBehaviour
 
     void Update()
     {
+        // if player dies, reload current level, subtract 100 from score, give player 100% health
         if (playerShip == null)
         {
             PersistData.Instance.SubtractScoreOnDeath();
             ReloadLevel();
-            PersistData.Instance.SetPlayerHealth(playerStartingHealth);
+            PersistData.Instance.SetPlayerHealth(PLAYER_STARTING_HEALTH);
         }
         else if (enemyShip == null)
         {

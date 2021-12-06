@@ -24,8 +24,8 @@ public class EnemyShipRandom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // distance between target player and enemy ship
         targetPlayer = GameObject.FindGameObjectWithTag("Player").transform;
-
         if (enemyBody == null)
         {
             enemyBody = GetComponent<Rigidbody2D>();
@@ -40,6 +40,7 @@ public class EnemyShipRandom : MonoBehaviour
 
     private void Update()
     {
+        // rotate enemy ship to face player
         direction = targetPlayer.position - transform.position;
         rotationAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         enemyBody.rotation = rotationAngle;
@@ -57,12 +58,13 @@ public class EnemyShipRandom : MonoBehaviour
         RandomMove();
     }
 
-    // Enemy ship horizontal and vertical movement
+    // Enemy ship random movement
     private void RandomMove()
     {
         enemyBody.AddForce(movement * speed);
     }
 
+    // the direction to randomly move towards
     private void SetRandomDirection()
     {
         timer -= Time.deltaTime;
@@ -73,6 +75,7 @@ public class EnemyShipRandom : MonoBehaviour
         }
     }
 
+    // if collide with border, send in reverse direction
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Wall")

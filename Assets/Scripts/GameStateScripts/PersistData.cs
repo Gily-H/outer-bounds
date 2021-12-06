@@ -19,13 +19,14 @@ public class PersistData : MonoBehaviour
         }
     }
 
+    // each time start game, player ship beings with 0 score, 100% health
     private void Start()
     {
         SetScore(0);
         SetPlayerHealth(100);
     }
 
-    // health and score persistant data
+    // persist score throughout entire game session
     public void SetScore(int score)
     {
         PlayerPrefs.SetInt("CurrentScore", score);
@@ -40,6 +41,7 @@ public class PersistData : MonoBehaviour
         SetScore(Instance.GetScore() - 100);
     }
 
+    // persist player health through scene changes
     public void SetPlayerHealth(int health)
     {
         PlayerPrefs.SetInt("PlayerHealth", health);

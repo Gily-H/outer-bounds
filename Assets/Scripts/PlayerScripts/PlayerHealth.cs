@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         PersistData.Instance.SetPlayerHealth(health);
-        PersistData.Instance.SetScore(PersistData.Instance.GetScore() - 2);
+        PersistData.Instance.SetScore(PersistData.Instance.GetScore() - 2); // subtract 2 from score when hit by enemy
 
         // if ship has no hp, destroy ship
         if (health <= 0)
@@ -39,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
         return PersistData.Instance.GetPlayerHealth();
     }
 
+    // enemy laser damage to player ship based on difficulty
     private void SetLaserDamage()
     {
         int difficulty = PlayerPrefs.GetInt("Difficulty");

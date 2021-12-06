@@ -17,7 +17,6 @@ public class EndScreenController : MonoBehaviour
     private string highScoreName;
     private int score;
 
-
     private void Start()
     {
         menuButton = GameObject.Find("MenuButton");
@@ -30,6 +29,7 @@ public class EndScreenController : MonoBehaviour
         scoreText.text = scoreText.text + score;
     }
 
+    // Save the player name
     private void SetName()
     {
         nameText = GameObject.Find("InputField").GetComponent<InputField>();
@@ -37,6 +37,7 @@ public class EndScreenController : MonoBehaviour
         Debug.Log(highScoreName);
     }
 
+    // save the player name and the player's end score
     public void SaveResult()
     {
         SetName();
@@ -46,6 +47,7 @@ public class EndScreenController : MonoBehaviour
         SwitchButtonsAfterSave();
     }
 
+    // switch button so player can return to main menu - prevents double save entries
     private void SwitchButtonsAfterSave()
     {
         saveButton = GameObject.Find("SaveResults");

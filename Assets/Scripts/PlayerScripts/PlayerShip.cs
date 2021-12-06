@@ -79,12 +79,9 @@ public class PlayerShip : MonoBehaviour
 
     }
 
-    // create and shoot laser beam
     private void FireLaser()
     {
-
         firePoint = GameObject.Find("PlayerFirePoint").transform;
-        // get the LaserSpawner script and call the SpawnLaser method
         laserSpawner.GetComponent<LaserSpawner>().Spawn(firePoint.position, firePoint.rotation);
     }
 

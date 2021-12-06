@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerScore : MonoBehaviour
 {
-    private int score;
     [SerializeField] Text scoreText;
 
     // Start is called before the first frame update

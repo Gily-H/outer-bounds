@@ -25,6 +25,7 @@ public class EnemyShip : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // get player ship transform component
         targetPlayer = GameObject.FindGameObjectWithTag("Player").transform;
         if (enemyBody == null)
         {
@@ -33,13 +34,15 @@ public class EnemyShip : MonoBehaviour
         enemyLaserSpawner = GameObject.FindGameObjectWithTag("EnemyLaserSpawner");
         enemyHealthText = GameObject.Find("EnemyHealth").GetComponent<Text>();
 
-        SetFireRate();
-        timeTillNextFire = Time.time;
+        SetFireRate(); // how fast the enemy fires 
+        timeTillNextFire = Time.time; // time between each fire
     }
 
     private void Update()
     {
+        // distance between enemy ship and player ship
         direction = targetPlayer.position - transform.position;
+        // rotate the enemy ship to face the player ship
         rotationAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         enemyBody.rotation = rotationAngle;
         movement = direction.normalized;
@@ -56,7 +59,7 @@ public class EnemyShip : MonoBehaviour
         Chasing();
     }
 
-    // Enemy ship horizontal and vertical movement
+    // enemy chasing player function
     private void Chasing()
     {
         enemyBody.MovePosition(transform.position + (direction * speed) * Time.deltaTime);

@@ -6,7 +6,6 @@ public class EnemyLaser : MonoBehaviour
 {
     [SerializeField] Rigidbody2D bullet;
     [SerializeField] float speed = 10.0f;
-    [SerializeField] float movement;
     [SerializeField] Transform targetPlayer;
     private AudioSource hitSound;
 
@@ -35,11 +34,12 @@ public class EnemyLaser : MonoBehaviour
 
     private void LaserMovement()
     {
+        // shoot laser in direction of player ship
         Vector2 force = (targetPlayer.position - transform.position).normalized * speed;
         bullet.velocity = new Vector2(force.x, force.y);
 
+        // rotate bullet to face player ship
         float rotationAngle = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
         bullet.rotation = rotationAngle;
-
     }
 }

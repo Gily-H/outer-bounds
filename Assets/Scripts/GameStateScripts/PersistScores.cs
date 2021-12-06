@@ -24,13 +24,14 @@ public class PersistScores : MonoBehaviour
         }
     }
 
-    // ending screen save stats
+    // set the player name and final score
     public void SetPlayerNameAndScore(string name, int score)
     {
         playerName = name;
         playerEndScore = score;
     }
 
+    // update the high score list
     public void SavePlayerNameAndScore()
     {
         for (int i = 0; i < MAX_SCORES; i++)
@@ -64,6 +65,7 @@ public class PersistScores : MonoBehaviour
         }
     }
 
+    // display the high scores in given arrays
     public void InitializeHighscores(GameObject[] names, GameObject[] scores)
     {
         for (int i = 0; i < MAX_SCORES; i++)
