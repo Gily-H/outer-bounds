@@ -18,6 +18,7 @@ TagManager:
   - Highscores
   - HSnames
   - HScores
+  - LevelMusic
   layers:
   - Default
   - TransparentFX
