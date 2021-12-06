@@ -9,6 +9,7 @@ public class PlayerShip : MonoBehaviour
     [SerializeField] Transform firePoint;
 
     [SerializeField] Text playerHealthText;
+    private Animator animator;
 
     [SerializeField] Rigidbody2D playerBody;
     [SerializeField] float hMovement;
@@ -23,6 +24,8 @@ public class PlayerShip : MonoBehaviour
         {
             playerBody = GetComponent<Rigidbody2D>();
         }
+
+        animator = GetComponent<Animator>();
         playerHealthText = GameObject.Find("PlayerHealth").GetComponent<Text>();
         laserSpawner = GameObject.FindGameObjectWithTag("LaserSpawner");
     }
@@ -43,10 +46,12 @@ public class PlayerShip : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow)) 
         {
             MoveVertical();
+            animator.SetBool("isMovingVertical", true);
         }
         else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
             MoveHorizontal();
+            animator.SetBool("isMovingVertical", false);
         }
     }
 
