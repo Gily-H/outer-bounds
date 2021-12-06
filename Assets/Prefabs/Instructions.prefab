@@ -1,5 +1,99 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2837255402858513880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 903536863925493959}
+  - component: {fileID: 5737294612199695715}
+  - component: {fileID: 4590721676783973347}
+  m_Layer: 5
+  m_Name: DirectionsText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &903536863925493959
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2837255402858513880}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8480290192133027111}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 22.74348, y: -121.22095}
+  m_SizeDelta: {x: 1365.2666, y: 513.5613}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5737294612199695715
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2837255402858513880}
+  m_CullTransparentMesh: 1
+--- !u!114 &4590721676783973347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2837255402858513880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Goal: Defeat the enemy ships in each of the three total levels.
+
+
+    Level
+    One: The first enemy pilot never finished piloting school and has trouble flying
+    their giant ship - Enemy ship has random movement and increased size
+
+
+    Level
+    Two: The second enemy pilot has better coordination and will follow the player
+    around - Enemy ship will follow the player and has moderate size
+
+
+    Level
+    Three: The third enemy pilot is an expert driver and can handle stick shift -
+    Enemy ship has the smallest and fastest ship'
 --- !u!1 &4217881092205704212
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,8 +150,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7813783696595294580}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -326, y: 31, z: 0}
-  m_LocalScale: {x: 72.705, y: 69.79, z: 1}
+  m_LocalPosition: {x: -320.3033, y: 350.123, z: 0}
+  m_LocalScale: {x: 72.021576, y: 64.0742, z: 1}
   m_Children: []
   m_Father: {fileID: 8480290192133027111}
   m_RootOrder: 1
@@ -138,7 +232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8444333377818683799}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 334, y: 30, z: 0}
+  m_LocalPosition: {x: 263, y: 352, z: 0}
   m_LocalScale: {x: 87.147415, y: 83.905266, z: 1}
   m_Children: []
   m_Father: {fileID: 8480290192133027111}
@@ -228,6 +322,7 @@ RectTransform:
   - {fileID: 4015880855498773736}
   - {fileID: 4772623801789340145}
   - {fileID: 8480290192279064124}
+  - {fileID: 903536863925493959}
   m_Father: {fileID: 1203151382072652653}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
