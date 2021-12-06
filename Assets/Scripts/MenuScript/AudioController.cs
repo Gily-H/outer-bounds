@@ -7,10 +7,13 @@ public class AudioController : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
     [SerializeField] Text volumeText;
+    [SerializeField] GameObject saveText;
 
     // Start is called before the first frame update
     void Start()
     {
+        saveText = GameObject.Find("SaveText");
+        saveText.SetActive(false);
         SetGameVolume();
     }
 
@@ -24,6 +27,7 @@ public class AudioController : MonoBehaviour
     {
         PlayerPrefs.SetFloat("VolumeValue", volumeSlider.value);
         SetGameVolume();
+        saveText.SetActive(true);
     }
 
     void SetGameVolume()

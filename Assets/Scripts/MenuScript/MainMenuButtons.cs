@@ -10,6 +10,7 @@ public class MainMenuButtons : MonoBehaviour
     [SerializeField] GameObject settingsPanel;
     [SerializeField] GameObject instructionsPanel;
     [SerializeField] GameObject highscorePanel;
+    [SerializeField] GameObject saveText;
 
     private void Start()
     {
@@ -40,6 +41,7 @@ public class MainMenuButtons : MonoBehaviour
 
     public void MainMenu()
     {
+        saveText.SetActive(false);
         settingsPanel.SetActive(false);
         instructionsPanel.SetActive(false);
         highscorePanel.SetActive(false);

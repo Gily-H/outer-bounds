@@ -222,6 +222,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26706f212c1e6e4e89fd0283b66ba88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1285866431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1720849525016756553, guid: 6213199855de48a419a027d5c57e986e, type: 3}
+  m_PrefabInstance: {fileID: 4710674355360054217}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1656065693
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,6 +439,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5798634826847081260, guid: 6213199855de48a419a027d5c57e986e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5849087558726098460, guid: 6213199855de48a419a027d5c57e986e, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.2816322
@@ -531,6 +540,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6553456185223172499, guid: 6213199855de48a419a027d5c57e986e, type: 3}
+      propertyPath: saveText
+      value: 
+      objectReference: {fileID: 1285866431}
+    - target: {fileID: 6553456185223172499, guid: 6213199855de48a419a027d5c57e986e, type: 3}
       propertyPath: instructionsPanel
       value: 
       objectReference: {fileID: 243615226}
@@ -575,8 +588,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7567510800275184854, guid: 6213199855de48a419a027d5c57e986e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567510800275184854, guid: 6213199855de48a419a027d5c57e986e, type: 3}
       propertyPath: m_TagString
       value: Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206138481106644228, guid: 6213199855de48a419a027d5c57e986e, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206138481106644228, guid: 6213199855de48a419a027d5c57e986e, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206138481106644228, guid: 6213199855de48a419a027d5c57e986e, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8923673615838618800, guid: 6213199855de48a419a027d5c57e986e, type: 3}
       propertyPath: m_TagString
