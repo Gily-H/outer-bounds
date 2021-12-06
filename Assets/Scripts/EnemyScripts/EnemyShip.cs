@@ -62,14 +62,6 @@ public class EnemyShip : MonoBehaviour
         enemyBody.MovePosition(transform.position + (direction * speed) * Time.deltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Wall")
-        {
-            speed *= -1;
-        }
-    }
-
     private void FireEnemyLaser()
     {
         enemyFirePoint = GameObject.Find("EnemyFirePoint").transform;

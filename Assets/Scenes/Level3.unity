@@ -135,6 +135,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1789024701945317110, guid: 852bdad3d67e93143afc111951ed6046, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3860021991682429145, guid: 852bdad3d67e93143afc111951ed6046, type: 3}
       propertyPath: m_Name
       value: EnemyShip
@@ -142,6 +146,14 @@ PrefabInstance:
     - target: {fileID: 3860021991682429149, guid: 852bdad3d67e93143afc111951ed6046, type: 3}
       propertyPath: m_RootOrder
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860021991682429149, guid: 852bdad3d67e93143afc111951ed6046, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860021991682429149, guid: 852bdad3d67e93143afc111951ed6046, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3860021991682429149, guid: 852bdad3d67e93143afc111951ed6046, type: 3}
       propertyPath: m_LocalPosition.x

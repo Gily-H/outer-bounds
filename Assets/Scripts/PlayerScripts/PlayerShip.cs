@@ -39,12 +39,20 @@ public class PlayerShip : MonoBehaviour
         {
             FireLaser();
         }
+        
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow)) 
+        {
+            MoveVertical();
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        {
+            MoveHorizontal();
+        }
     }
 
     private void FixedUpdate()
     {
         DisplayPlayerHealth();
-        Move();
         CheckForFlip();
     }
 
@@ -59,17 +67,16 @@ public class PlayerShip : MonoBehaviour
         }
     }
 
-    // Playership horizontal and vertical movement
-    private void Move()
+    private void MoveVertical()
     {
-        if (hMovement != 0)
-        {
-            playerBody.velocity = new Vector2(hMovement * speed, playerBody.velocity.y);
-        }
-        else if (vMovement != 0)
-        {
-            playerBody.velocity = new Vector2(playerBody.velocity.x, vMovement * speed);
-        }
+        playerBody.velocity = new Vector2(playerBody.velocity.x, vMovement * speed);
+
+    }
+
+    private void MoveHorizontal()
+    {
+        playerBody.velocity = new Vector2(hMovement * speed, playerBody.velocity.y);
+
     }
 
     // create and shoot laser beam

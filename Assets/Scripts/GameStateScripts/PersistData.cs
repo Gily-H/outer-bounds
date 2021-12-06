@@ -12,13 +12,17 @@ public class PersistData : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            SetScore(0);
-            SetPlayerHealth(100);
         }
         else
         {
             Destroy(this);
         }
+    }
+
+    private void Start()
+    {
+        SetScore(0);
+        SetPlayerHealth(100);
     }
 
     // health and score persistant data
