@@ -12,7 +12,10 @@ public class AudioController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        saveText = GameObject.Find("SaveText");
+        if (saveText == null)
+        {
+            saveText = GameObject.Find("SaveText");
+        }
         saveText.SetActive(false);
         SetGameVolume();
     }
